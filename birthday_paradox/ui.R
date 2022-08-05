@@ -18,7 +18,8 @@ shinyUI(fluidPage(
                                          value = 100,
                                          max = 1000,
                                          min=1, 
-                                         step = 1)
+                                         step = 1),
+                            submitButton('Aplicar cambios')
                           ),
                           mainPanel(
                             verbatimTextOutput("probabilidad")
@@ -36,10 +37,11 @@ shinyUI(fluidPage(
                             numericInput('n2',label = "Numero de persona la misma fecha de cumpleaños:",
                                          value = 2,step = 1),
                             sliderInput('range_nsim',label = 'Rango simulacion',
-                                        value = c(10,100),min=10,max=500),
-                            numericInput('step',label = 'Step',value = 10)
+                                        value = c(500,2000),min=10,max=5000),
+                            numericInput('step',label = 'Step',value = 500),
+                            submitButton('Aplicar cambios')
                                        ),
-                          mainPanel('Main')
+                          mainPanel(plotOutput('plotxy'))
                           
                         )
                         )
