@@ -27,8 +27,20 @@ shinyUI(fluidPage(
                         ),
                tabPanel('plot',
                         sidebarLayout(
-                          sidebarPanel('Side'),
+                          sidebarPanel(
+                            sliderInput('N2', label = 'Tamaño del Grupo:',
+                                        min = 5,
+                                        max=150,
+                                        value = 20,
+                                        step = 1),
+                            numericInput('n2',label = "Numero de persona la misma fecha de cumpleaños:",
+                                         value = 2,step = 1),
+                            sliderInput('range_nsim',label = 'Rango simulacion',
+                                        value = c(10,100),min=10,max=500),
+                            numericInput('step',label = 'Step',value = 10)
+                                       ),
                           mainPanel('Main')
+                          
                         )
                         )
                )
