@@ -24,6 +24,7 @@ birthday_paradox <- function(N,n,nsim){
 }
 
 
+
 shinyServer(function(input, output) {
 
 output$probabilidad <- renderPrint({
