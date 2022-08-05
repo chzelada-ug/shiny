@@ -25,7 +25,12 @@ shinyUI(fluidPage(
                           )
                         )
                         ),
-               tabPanel('plot',h1('Grafica'))
+               tabPanel('plot',
+                        sidebarLayout(
+                          sidebarPanel('Side'),
+                          mainPanel('Main')
+                        )
+                        )
                )
     
 ))
